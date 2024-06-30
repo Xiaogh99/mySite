@@ -9,7 +9,12 @@
 </head>
 
 <body>
-    <h1>Welcome to My Django Site</h1>
+    <h1>机场项目设计相关标准规范</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">提交</button>
+    </form>
 </body>
 
 </html>
