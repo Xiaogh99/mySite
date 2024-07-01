@@ -5,6 +5,12 @@ from .models import Standard
 
 
 # Create your views here.
+def home(request):
+    """show all standards"""
+    standards = Standard.objects.all()
+    return render(request, "home.html", {"standards": standards})
+
+
 def add_a_standard(request):
     if request.method == "POST":
         form = ArticleForm(request.POST)
@@ -18,4 +24,4 @@ def add_a_standard(request):
             return HttpResponse("Standard saved!")
     else:
         form = ArticleForm
-    return render(request, "home.html", {"form": form})
+    return render(request, "add_a_standard.html", {"form": form})

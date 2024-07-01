@@ -4,17 +4,31 @@
 <html>
 
 <head>
-    <title>Home</title>
+    <title>Articles</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
-    <h1>机场项目设计相关标准规范</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">提交</button>
-    </form>
+    <h1>民用机场设计标准规范</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>编号</th>
+                <th>实施日期</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in standards %}
+            <tr>
+                <td>{{ record.title }}</td>
+                <td>{{ record.codeID}}</td>
+                <td>{{ record.published_date}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
 </body>
 
 </html>
