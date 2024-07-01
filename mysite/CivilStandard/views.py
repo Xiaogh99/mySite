@@ -5,7 +5,7 @@ from .models import Standard
 
 
 # Create your views here.
-def home(request):
+def add_a_standard(request):
     if request.method == "POST":
         form = ArticleForm(request.POST)
         if form.is_valid():
