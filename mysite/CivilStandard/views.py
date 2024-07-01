@@ -9,7 +9,8 @@ def home(request):
         form = ArticleForm(request.POST)
         if form.is_valid():
             title = form.cleaned_data["title"]
-            content = form.cleaned_data["content"]
+            codeID = form.cleaned_data["codeID"]
+            date = form.cleaned_data["date"]
             return HttpResponse("Article saved!")
     else:
         form = ArticleForm
