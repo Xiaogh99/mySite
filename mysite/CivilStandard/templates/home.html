@@ -23,7 +23,7 @@
             <tr>
                 <td>{{ record.title }}</td>
                 <td>{{ record.codeID}}</td>
-                <td>{{ record.published_date}} </td>
+                <td>{{ record.published_date|date:"Y-m-d" }} </td>
             </tr>
             {% endfor %}
         </tbody>
